@@ -1,13 +1,5 @@
 package Logica;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class Restaurante 
@@ -28,10 +20,16 @@ public class Restaurante
 		this.combos = combos;
 	}
 	
+	
+	
 	public void iniciarPedido(String nombreCliente, String direccionCliente)
 	{
-		// Se llama al constructor 
+		// Se llama al constructor de la clase pedido y se crea una instancia a partir de este
 		Pedido pedidoEnCurso = new Pedido(nombreCliente, direccionCliente);
+		int idPedido = pedidoEnCurso.getIdPedido();
+		System.out.println(idPedido);
+		
+		String ruta_guardar_pedidos = 
 		
 	}
 
