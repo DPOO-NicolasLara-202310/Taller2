@@ -6,17 +6,17 @@ public class Combo implements Producto
 	
 	private double descuento;
 	private String nombreCombo;
-	private ArrayList<ProductoMenu> itemsCombo;
+	private ArrayList<Producto> itemsCombo;
 
 
-	public Combo(double descuento, String nombreCombo, ArrayList<ProductoMenu> itemsCombo) 
+	public Combo(double descuento, String nombreCombo) 
 	{
 		this.descuento = descuento;
 		this.nombreCombo = nombreCombo;
-		this.itemsCombo = itemsCombo;
+		this.itemsCombo = new ArrayList<Producto>();
 	}
 
-	public void agregarItemACombo(ProductoMenu itemCombo) 
+	public void agregarItemACombo(Producto itemCombo) 
 	{
 		itemsCombo.add(itemCombo);
 	}
@@ -25,7 +25,7 @@ public class Combo implements Producto
 	public int getPrecio() 
 	{
 		int precio = 0;
-		for (ProductoMenu item: itemsCombo)
+		for (Producto item: itemsCombo)
 		{
 			int precio_ing = item.getPrecio();
 			precio += precio_ing;
@@ -39,7 +39,7 @@ public class Combo implements Producto
 	public int getCalorias()
 	{
 		int calorias = 0;
-		for (ProductoMenu item: itemsCombo)
+		for (Producto item: itemsCombo)
 		{
 			calorias += item.getCalorias();
 		}

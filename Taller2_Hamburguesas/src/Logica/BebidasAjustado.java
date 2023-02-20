@@ -9,6 +9,12 @@ public class BebidasAjustado implements Producto
 	private ArrayList<Ingrediente> agregados;
 	private ArrayList<Ingrediente> eliminados;	
 	
+	public BebidasAjustado(Bebidas base) 
+	{
+		this.base = base;
+		this.agregados = new ArrayList<Ingrediente>();
+		this.eliminados = new ArrayList<Ingrediente>();
+	}
 	
 	public void agregar(Ingrediente adicion)
 	{

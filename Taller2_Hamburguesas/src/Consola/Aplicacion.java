@@ -1,12 +1,6 @@
 package Consola;
 
-
-
-
-public class Aplicacion {
-	
+public class Aplicacion 
+{
 	
 }
-	
-	
-

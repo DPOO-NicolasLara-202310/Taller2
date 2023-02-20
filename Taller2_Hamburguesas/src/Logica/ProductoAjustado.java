@@ -10,6 +10,15 @@ public class ProductoAjustado implements Producto
 	private ArrayList<Ingrediente> eliminados;	
 	
 	
+	
+	
+	public ProductoAjustado(ProductoMenu base) 
+	{
+		this.base = base;
+		this.agregados = new ArrayList<Ingrediente>();
+		this.eliminados = new ArrayList<Ingrediente>();
+	}
+
 	public void agregar(Ingrediente adicion)
 	{
 		agregados.add(adicion);
