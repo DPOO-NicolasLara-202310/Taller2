@@ -1,11 +1,11 @@
 package Logica;
 import java.util.ArrayList;
 
-public class ProductoAjustado implements Producto
+public class BebidasAjustado implements Producto
 
 {
 
-	private ProductoMenu base;
+	private Bebidas base;
 	private ArrayList<Ingrediente> agregados;
 	private ArrayList<Ingrediente> eliminados;	
 	

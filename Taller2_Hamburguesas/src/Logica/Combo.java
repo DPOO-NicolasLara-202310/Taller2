@@ -11,7 +11,6 @@ public class Combo implements Producto
 
 	public Combo(double descuento, String nombreCombo, ArrayList<ProductoMenu> itemsCombo) 
 	{
-		super();
 		this.descuento = descuento;
 		this.nombreCombo = nombreCombo;
 		this.itemsCombo = itemsCombo;
@@ -35,6 +34,18 @@ public class Combo implements Producto
 		return (int) (precio*(1-descuento));
 		
 	}
+	
+	@Override
+	public int getCalorias()
+	{
+		int calorias = 0;
+		for (ProductoMenu item: itemsCombo)
+		{
+			calorias += item.getCalorias();
+		}
+		return calorias;
+	}
+		
 
 	@Override
 	public String getNombre() 
@@ -46,8 +57,11 @@ public class Combo implements Producto
 	public String generarTextoFactura() 
 	{
 		int precio = getPrecio();
-		String str_price = Integer.toString(precio);
-		String textofactura = "El precio es " + str_price;
+		int calorias = getCalorias();
+		
+		String precio_str = Integer.toString(precio);
+		String calorias_str = Integer.toString(calorias);
+		String textofactura = "El precio es " + precio_str + " con " + calorias_str + " calorias.";
 		return textofactura;
 	}
 

@@ -3,16 +3,14 @@ public class ProductoMenu implements Producto
 {
 	private String nombre;
 	private int precioBase;
+	private int calorias;
 	
-	public ProductoMenu(String nombre, int precioBase) 
+	public ProductoMenu(String nombre, int precioBase, int calorias) 
 	{
-		super();
 		this.nombre = nombre;
 		this.precioBase = precioBase;
+		this.calorias = calorias;
 	}
-
-	
-	
 
 	@Override
 	public int getPrecio() 
@@ -25,12 +23,19 @@ public class ProductoMenu implements Producto
 	{
 		return nombre;
 	}
+	
+	@Override
+	public int getCalorias() 
+	{
+		return calorias;
+	}
 
 	@Override
 	public String generarTextoFactura() 
 	{
-		String str_price = Integer.toString(precioBase);
-		String textofactura = "El precio es " + str_price;
+		String precio_str = Integer.toString(precioBase);
+		String calorias_str = Integer.toString(calorias);
+		String textofactura = "El precio es " + precio_str + " con " + calorias_str + " calorias.";
 		return textofactura;
 	}	
 	

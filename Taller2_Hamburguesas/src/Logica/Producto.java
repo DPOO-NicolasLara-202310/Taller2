@@ -9,4 +9,6 @@ public interface Producto
 	
 	public String generarTextoFactura();
 	
+	public int getCalorias();
+	
 }
